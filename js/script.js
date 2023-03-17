@@ -1,3 +1,5 @@
+// very simple carousel on the wrapper
+
 let wrapCarousel =document.querySelectorAll("#wrapper ul li");
 let wrapCarouselButton =document.querySelectorAll("#wrapper > i");
 
@@ -19,4 +21,11 @@ wrapCarouselButton.forEach(e=>{
       })
     },5000)
   }
+})
+
+// go to up button
+
+addEventListener("scroll",()=>{
+  if (window.scrollY>50) document.querySelector("i.goUp").classList.add("seen")
+  else document.querySelector("i.goUp").classList.remove("seen")
 })

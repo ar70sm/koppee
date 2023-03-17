@@ -91,7 +91,6 @@
 #wrapper > i:last-of-type {
   right: 50px;
 }
-
 @-webkit-keyframes carousel {
   0% {
     -webkit-transform: translateX(100%);
@@ -102,7 +101,6 @@
             transform: translateX(0);
   }
 }
-
 @keyframes carousel {
   0% {
     -webkit-transform: translateX(100%);
@@ -112,4 +110,54 @@
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
+}
+
+#about .contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#about .contents img {
+  height: 450px;
+}
+#about .contents .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 15px;
+}
+#about .contents .box p, #about .contents .box li {
+  font-size: 20px;
+}
+#about .contents .box li {
+  margin-bottom: 5px;
+}
+#about .contents .box li:before {
+  content: "\f00c";
+  font-family: fontawesome;
+  margin-right: 10px;
+}
+#about .contents .box button {
+  margin-top: 10px;
+}
+#about .contents .box:first-of-type button {
+  background-color: #33211d;
+  color: white;
+}
+#about .contents .box:first-of-type button:hover {
+  background-color: rgba(51, 33, 29, 0.9);
 }

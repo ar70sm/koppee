@@ -1,0 +1,42 @@
+@use "../helpers/variable" as *;
+
+@mixin aboutSection {
+  #about {
+    .contents{
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      img{
+        height: 450px;
+      }
+      .box{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        p,li{
+          font-size: 20px;
+        }
+        li{
+          margin-bottom: 5px;
+          &:before{
+            content: "\f00c";
+            font-family: fontawesome;
+            margin-right: 10px;
+          }
+        }
+        button{
+          margin-top: 10px;
+        }
+        &:first-of-type button{
+          background-color: $mainColor;
+          color: white;
+          &:hover{
+            background-color: rgb($mainColor,0.9);
+          }      
+        }
+      }
+    }
+  }
+}

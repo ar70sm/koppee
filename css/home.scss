@@ -1,6 +1,8 @@
-@use "./mixins/_general.scss" as *;
-@use "./components/_variable.scss" as *;
-@use "./components/_pseudoClass.scss" as *;
+@use "./helpers/mixins" as *;
+@use "./helpers/variable" as *;
+@use "./helpers/pseudoClass" as *;
+@use "./layout/sections" as *;
+
 #wrapper{
   color: white;
   position: relative;
@@ -49,7 +51,6 @@
     repeat:repeat-x;
     position:left bottom -1px;
   }
-
   >i{
     position: absolute;
     z-index: 5;
@@ -64,12 +65,19 @@
       right: 50px;
     }
   }
-}
-@keyframes carousel{
-  0%{
-    transform: translateX(100%);
+  @keyframes carousel{
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
   }
-  100%{
-    transform: translateX(0);
-  }
 }
+
+@include aboutSection;
+
+
+
+
+// animations
