@@ -1,0 +1,59 @@
+@use "./mixins/_general.scss" as *;
+@use "./components/_variable.scss" as *;
+@use "./components/_general.scss";
+
+body{
+  position: relative;
+  font-family: "Roboto",sans-serif;
+  overflow: hidden;
+  background-color: $backColor;
+  .lorem{
+    font-family: "Montserrat",sans-serif;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: $mainPadding;
+  z-index: 100;
+  h1{
+    font-size: 40px;
+  }
+  >ul{
+    display: flex;
+    gap: 20px;
+    padding: 5px 10px;
+    ul{
+      position: absolute;
+      top: 100%;
+      padding-top: 10px;
+      left: 0;
+      color: #888;
+      display: none;
+      li{
+        padding: 5px 10px;
+        background-color: white;
+      }
+      li:hover{
+        background-color: #eee;
+      }
+    }
+    li{
+      position: relative;
+      transition-duration: $mainDelay;
+    }
+    >li.active,
+    >li:hover{
+      color: $greyColor;
+      ul{
+        display: block;
+      }
+    }
+  }
+}

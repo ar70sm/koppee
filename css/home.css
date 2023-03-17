@@ -1,0 +1,115 @@
+#wrapper ul li .textBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#wrapper {
+  color: white;
+  position: relative;
+  background: url(../img/overlay-bottom.png);
+  background-repeat: repeat-x;
+  background-position: left bottom -1px;
+}
+#wrapper ul {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: -1;
+}
+#wrapper ul li {
+  position: relative;
+  margin-right: -100%;
+  width: 100%;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+#wrapper ul li:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(51, 33, 29, 0.5);
+}
+#wrapper ul li.active {
+  -webkit-animation: carousel 1s;
+          animation: carousel 1s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+#wrapper ul li img {
+  width: 100%;
+}
+#wrapper ul li .textBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+#wrapper ul li .textBox .upperP {
+  color: #da9f5b;
+  font-size: 40px;
+}
+#wrapper ul li .textBox h2 {
+  font-size: 50px;
+}
+#wrapper ul li .textBox p:last-of-type {
+  font-size: 30px;
+}
+#wrapper ul li .textBox p:last-of-type:after, #wrapper ul li .textBox p:last-of-type:before {
+  content: " * ";
+}
+#wrapper > i {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 20px;
+  cursor: pointer;
+}
+#wrapper > i:first-of-type {
+  left: 50px;
+}
+#wrapper > i:last-of-type {
+  right: 50px;
+}
+
+@-webkit-keyframes carousel {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes carousel {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}

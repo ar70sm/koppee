@@ -1,0 +1,38 @@
+@mixin mediaSet ($type){
+  @if $type=="sm"{
+    @media (max-width: 575px) {
+      @content;
+    }  
+  } @else if $type=="md"{
+    @media (max-width: 767px) {
+      @content;
+    }  
+  } @else if $type=="lg"{
+    @media (max-width: 991px) {
+      @content;
+    }  
+  } @else if $type=="xl"{
+    @media (max-width: 1199px) {
+      @content;
+    }  
+  } @else if $type=="xxl"{
+    @media (max-width: 1399px) {
+      @content;
+    }  
+  } @else {
+    @error "media name is wrong"
+  }
+};
+
+@mixin overCover($color,$opacity){
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb($color,$opacity);
+  }
+}

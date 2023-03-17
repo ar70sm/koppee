@@ -1,0 +1,20 @@
+-var CurrentPage ="Home"
+-var currentPage =CurrentPage.toLowerCase()
+
+doctype html
+html(lang="en")
+  include ../components/head
+  body 
+    include ../components/nav
+    section#wrapper
+      ul
+        -for(var i=1; i<=2;i++)
+          li(class=`${(i==1)?"active":""}`)
+            img(src=`img/carousel-${i}.jpg`)
+            .textBox
+              p.upperP We have been servicing
+              h2 Coffee 
+              p since 1950
+      i.fa-solid.fa-angles-left
+      i.fa-solid.fa-angles-right
+    script(src="js/script.js") 

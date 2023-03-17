@@ -1,0 +1,13 @@
+mixin ulArr (arr)
+  ul
+    each i in arr
+      if (typeof i)=="object"
+        li.dropdown=i.title+" "
+          i.fa-solid.fa-caret-down
+          +ulArr(i.ele)
+      else
+        if(i == CurrentPage)
+          li.active: a(href=i.toLowerCase()+".html")=i
+        else 
+          li: a(href=i.toLowerCase()+".html")=i
+

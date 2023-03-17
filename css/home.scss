@@ -1,0 +1,75 @@
+@use "./mixins/_general.scss" as *;
+@use "./components/_variable.scss" as *;
+@use "./components/_pseudoClass.scss" as *;
+#wrapper{
+  color: white;
+  position: relative;
+  ul{
+    position: relative;
+    display: flex;
+    z-index: -1;
+    li{
+      @include overCover($mainColor,0.5);
+      margin-right: -100%;
+      width: 100%;
+      transition-duration: 1s;
+      transform: translateX(-100%);
+      &.active{
+        animation: carousel 1s;
+        transform: translateX(0);
+      }
+      img{
+        width: 100%;
+      }
+      .textBox{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 1;
+        @extend %textFlex;
+        .upperP{
+          color: $greyColor;
+          font-size: 40px;
+        }
+        h2{
+          font-size: 50px;
+        }
+        p:last-of-type{
+          font-size: 30px;
+          &:after,&:before{
+            content: " * ";
+          }
+        }
+      }
+    }
+  }
+  background: url(../img/overlay-bottom.png);
+  background:{
+    repeat:repeat-x;
+    position:left bottom -1px;
+  }
+
+  >i{
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    cursor: pointer;
+    &:first-of-type{
+      left: 50px;
+    }
+    &:last-of-type{
+      right: 50px;
+    }
+  }
+}
+@keyframes carousel{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
