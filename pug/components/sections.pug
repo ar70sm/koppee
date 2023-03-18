@@ -1,0 +1,45 @@
+mixin aboutSection
+  section#about
+    .container
+      h2.title About Us
+      p Serving Since 1950
+      .contents 
+        .box 
+          h3 Our Story
+          p Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet sed vero dolor sea
+          p.lorem. 
+            Takimata sed vero vero no sit sed, justo clita duo no duo amet et,
+            nonumy kasd sed dolor eos diam lorem eirmod. Amet sit amet amet no.
+            Est nonumy sed labore eirmod sit magna. Erat at est justo sit ut.
+            Labor diam sed ipsum et eirmod
+          button Learn more 
+        img(src="img/about.png", alt="alt")
+        .box 
+          h3 Our Vision
+          p.lorem. 
+            Invidunt lorem justo sanctus clita. Erat lorem labore ea,
+            justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
+            Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor
+          ul 
+            li Lorem ipsum dolor sit amet
+            li Lorem ipsum dolor sit amet
+            li Lorem ipsum dolor sit amet
+          button Learn more
+mixin serviceSection
+  section#service
+    .container
+      h2.title Our Services
+      p Fresh & Organic Beans
+      .contents
+        -
+          var serviceH3 =["Fastest Door Delivery","Fresh Coffee Beans"
+            ,"Best Quality Coffee","Online Table Booking"]
+        each v, i in serviceH3
+          .box 
+            img(src=`img/service-${i+1}.jpg`, alt="alt")
+            .textBox
+              h3 #{v}
+              p.lorem. 
+                Sit lorem ipsum et diam elitr est dolor sed duo.
+                Guberg sea et et lorem dolor sed est sit invidunt,
+                dolore tempor diam ipsum takima erat tempor

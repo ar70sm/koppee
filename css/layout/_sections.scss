@@ -1,4 +1,5 @@
 @use "../helpers/variable" as *;
+@use "../helpers/mixins" as *;
 
 @mixin aboutSection {
   #about {
@@ -35,6 +36,45 @@
           &:hover{
             background-color: rgb($mainColor,0.9);
           }      
+        }
+      }
+    }
+  }
+}
+@mixin serviceSection{
+  #service{
+    .contents{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+      gap: 15px;
+      padding: 0 70px;
+      .box{
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        img{
+          height: 200px;
+        }
+        $beforeContents:"\f1b9","\f0f4","\f5a2","\f0ce";
+        $i:1;
+        @each $v in $beforeContents{
+          &:nth-child(#{$i}) h3::before{
+            content: "#{$v}"
+          }
+          $i:$i+1;
+        }
+        h3{
+          margin-bottom: 10px;
+          &::before{
+            @include square(40px,1);
+            @include textFlex;
+            display: inline-flex;
+            font-family: "fontawesome";
+            font-size: 20px;
+            background-color: $greyColor;
+            margin-right: 10px;
+          }
         }
       }
     }

@@ -20,12 +20,18 @@
       @content;
     }  
   } @else {
-    @error "media name is wrong"
+    @error "media name is wrong";
   }
-};
-
+}
+@mixin textFlex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @mixin overCover($color,$opacity){
   position: relative;
+  z-index: 1;
   &:before{
     content: "";
     position: absolute;
@@ -33,6 +39,15 @@
     width: 100%;
     top: 0;
     left: 0;
+    z-index: -1;
     background-color: rgb($color,$opacity);
+  }
+}
+
+@mixin square($height,$circle){
+  height:$height;
+  width: $height;
+  @if $circle ==1 {
+    border-radius: 50%;
   }
 }

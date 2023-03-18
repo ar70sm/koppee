@@ -1,6 +1,5 @@
 @use "./helpers/mixins" as *;
 @use "./helpers/variable" as *;
-@use "./helpers/pseudoClass" as *;
 @use "./layout/sections" as *;
 
 #wrapper{
@@ -29,7 +28,7 @@
         left: 50%;
         transform: translate(-50%,-50%);
         z-index: 1;
-        @extend %textFlex;
+        @include textFlex;
         .upperP{
           color: $greyColor;
           font-size: 40px;
@@ -47,7 +46,7 @@
     }
   }
   background: url(../img/overlay-bottom.png);
-  background:{
+  background: {
     repeat:repeat-x;
     position:left bottom -1px;
   }
@@ -77,7 +76,44 @@
 
 @include aboutSection;
 
+@include serviceSection;
 
-
-
-// animations
+#offer{
+  color: white;
+  @include overCover($mainColor,0.6);
+  background: {
+    image: url(../img/bg.jpg);
+    size: cover;
+  }
+  >div{
+    
+    @include textFlex;
+    gap: 15px;
+    padding: 70px 0;
+    background: {
+      image: url(../img/overlay-bottom.png), url(../img/overlay-top.png);
+      repeat: repeat-x;
+      position: left bottom -1px,left top -1px;
+    }
+    p:nth-child(1){
+      font-size: 70px;
+      color: $greyColor;
+      font-weight: 900px;
+    }
+    p:nth-child(2){
+      font-size: 35px;
+    }
+    p:nth-child(3){
+      font-size: 25px;
+    }
+    form{
+      display: flex;
+      [type="email"]{
+        padding: 10px;
+        width: 200px;
+        max-width: 100%;
+      }
+    }
+  }
+  
+}

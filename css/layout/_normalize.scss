@@ -35,7 +35,11 @@ img {
   max-width: 100%;
   display: block;
 }
-input:focus,
+input,
 textarea:focus{
-  outline: none;
+  &:focus{
+    outline: none;
+  }
+  border: none;
 }
+

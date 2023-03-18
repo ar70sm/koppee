@@ -26,6 +26,6 @@ wrapCarouselButton.forEach(e=>{
 // go to up button
 
 addEventListener("scroll",()=>{
-  if (window.scrollY>50) document.querySelector("i.goUp").classList.add("seen")
-  else document.querySelector("i.goUp").classList.remove("seen")
+  if (window.scrollY>50) document.querySelector(".goUp").classList.add("seen")
+  else document.querySelector(".goUp").classList.remove("seen")
 })
