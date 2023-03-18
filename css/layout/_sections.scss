@@ -1,6 +1,30 @@
 @use "../helpers/variable" as *;
 @use "../helpers/mixins" as *;
 
+%checklist{
+  &:before{
+    content: "\f00c";
+    font-family: fontawesome;
+    margin-right: 10px;
+    color: $greyColor;
+  }
+}
+%paperSection{
+  color: white;
+  @include overCover($mainColor,0.6);
+  background: {
+    image: url(../img/bg.jpg);
+    size: cover;
+  }
+  >div{
+    padding: 70px 0;
+    background: {
+      image: url(../img/overlay-bottom.png), url(../img/overlay-top.png);
+      repeat: repeat-x;
+      position: left bottom -1px,left top -1px;
+    }
+  }
+}
 @mixin aboutSection {
   #about {
     .contents{
@@ -21,11 +45,7 @@
         }
         li{
           margin-bottom: 5px;
-          &:before{
-            content: "\f00c";
-            font-family: fontawesome;
-            margin-right: 10px;
-          }
+          @extend %checklist;
         }
         button{
           margin-top: 10px;
@@ -47,7 +67,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
       gap: 15px;
-      padding: 0 70px;
       .box{
         max-width: 100%;
         display: flex;
@@ -79,4 +98,117 @@
       }
     }
   }
+}
+
+@mixin menuSection{
+  #menu{
+    .contents{
+      display: flex;
+      gap: 30px;
+      h3.title{
+        font-size: 35px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .box{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 15px;
+        .img{
+          @include square(120px,1);
+          flex-shrink: 0;
+          position: relative;
+          img{
+            border-radius: 50%;
+          }
+          &:after{
+            @include square(40px,1);
+            @include textFlex;
+            content: "$" attr(price);
+            position: absolute;
+            background-color: $greyColor;
+            font-size: 20px;
+            right: 0px;
+            top: 0px;
+            z-index: 5;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin reservationSection{
+  #reservation{
+    .container{
+      padding: 0;
+      @extend %paperSection;
+      >div{
+        padding: {
+          right: 20px;
+          left: 20px;
+        }
+        display: flex;
+        gap: 20px;
+        >*{
+          width: 50%;
+        }
+        .textBox{
+          p{
+            margin-bottom: 10px;
+          }
+          p:nth-child(1){
+            color: $greyColor;
+            font-size: 70px;
+            font-weight: 700;
+          }
+          p:nth-child(2){
+            font-size: 50px;
+          }
+          p:nth-child(3){
+            color: white;
+            font-size: 20px;
+          }
+          li{
+            font-size: 20px;
+            margin-bottom: 5px;
+            @extend %checklist;
+          }
+        }
+        form{
+          @include overCover($mainColor,0.7);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 20px 10px;
+          gap: 10px;
+          p{
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 35px;
+          }
+          input:not([type="submit"]),
+          select{
+            border:none;
+            border-bottom: solid 0px $greyColor;
+            color: #aaa;
+            padding: 10px;
+            background-color: #fff1;
+            font-size: 20px;
+            &:focus{
+              border-bottom: solid 2px $greyColor; 
+              background-color: #fff3;
+            }
+          }
+          [type="submit"]{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+@mixin testimonialSection{
+  
 }

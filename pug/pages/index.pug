@@ -3,7 +3,10 @@
 include ../components/sections
 doctype html
 html(lang="en")
-  include ../components/head
+  head
+    include ../components/head
+    link(rel="stylesheet", href="css/owl.carousel.min.css")
+    link(rel="stylesheet", href="css/owl.theme.default.css")
   body 
     include ../components/nav
     section#wrapper
@@ -28,4 +31,9 @@ html(lang="en")
         form
           input(type="email",placeholder="Your Email")
           input(type="submit", value="Sign Up")
+    +menuSection
+    +reservationSection
+    +testimonialSection
+    script(src='js/jquery.min.js')
+    script(src='js/owlcarousel/owl.carousel.min.js')
     script(src="js/script.js") 

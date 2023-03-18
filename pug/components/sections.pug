@@ -43,3 +43,60 @@ mixin serviceSection
                 Sit lorem ipsum et diam elitr est dolor sed duo.
                 Guberg sea et et lorem dolor sed est sit invidunt,
                 dolore tempor diam ipsum takima erat tempor
+mixin menuSection 
+  section#menu 
+    .container
+      h2.title Menu & Pricing
+      p Competitive Pricing
+      .contents 
+        -
+          var menuList = [["Black Coffee",5],
+          ["Chocolete Coffee",7],
+          ["Coffee With Milk",9]]
+        mixin menuBoxes
+          each v, i in menuList
+            .box
+              .img(price=`${v[1]}`)
+                img(src=`img/menu-${i+1}.jpg`, alt="alt")
+              .textBox
+                h3=v[0]
+                p.lorem Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor
+        .part
+          h3.title Hot Coffee 
+          .boxes
+            +menuBoxes
+        .part
+          h3.title cold Coffee 
+          .boxes
+            +menuBoxes
+mixin reservationSection
+  section#reservation
+    .container
+      div 
+        .textBox 
+          p 30% OFF
+          p For Online Reservation
+          p.lorem. 
+            Lorem justo clita erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
+            ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea
+          ul 
+            li Lorem ipsum dolor sit amet
+            li Lorem ipsum dolor sit amet
+            li Lorem ipsum dolor sit amet
+        form
+          p Book Your Table
+          input(type="text", placeholder="Name")
+          input(type="email", placeholder="Email")
+          input(type="date", placeholder="date")
+          input(type="time", placeholder="time")
+          select
+            option person
+            option person 1
+            option person 2
+            option person 2
+          input(type="submit", value="Book Naw")
+mixin testimonialSection
+  h2 Testimonial
+  p Our Clients Say
+  .container 
+    
