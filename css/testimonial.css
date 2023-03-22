@@ -1,0 +1,104 @@
+#wrapper {
+  color: white;
+  position: relative;
+  z-index: 1;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+#wrapper:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(51, 33, 29, 0.85);
+}
+#wrapper > div {
+  padding: 150px 0;
+  background-image: url(../img/overlay-bottom.png);
+  background-repeat: repeat-x;
+  background-position: left bottom -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#wrapper > div h2 {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+#wrapper > div a {
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+}
+#wrapper > div a:hover {
+  color: #da9f5b;
+}
+
+#testimonial .owl-carousel div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+#testimonial .owl-carousel .item {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#testimonial .owl-carousel .item img {
+  height: 100px;
+  width: auto;
+}
+#testimonial .owl-carousel .item .client {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#testimonial .owl-carousel .item .client .textBox {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#testimonial .owl-carousel .item .client .textBox p {
+  margin-top: -10px;
+  color: #888;
+}
+#testimonial .owl-carousel .owl-nav {
+  display: none;
+}
+#testimonial .owl-carousel .owl-dots {
+  margin: 20px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#testimonial .owl-carousel .owl-dots button {
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  background-color: #da9f5b;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+}
+#testimonial .owl-carousel .owl-dots button span {
+  display: none;
+}
+#testimonial .owl-carousel .owl-dots button.active {
+  width: 35px;
+  background-color: #33211d;
+}

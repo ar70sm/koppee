@@ -15,6 +15,7 @@
   background: {
     image: url(../img/bg.jpg);
     size: cover;
+    attachment: fixed;
   }
   >div{
     padding: 70px 0;
@@ -23,6 +24,38 @@
       repeat: repeat-x;
       position: left bottom -1px,left top -1px;
     }
+  }
+}
+@mixin wrapperSection {
+  #wrapper {
+    color: white;
+    @include overCover($mainColor,0.85);
+    background: {
+      image: url(../img/bg.jpg);
+      size: cover;
+      attachment: fixed;
+    }
+    >div{
+      padding: 150px 0;
+      background: {
+        image: url(../img/overlay-bottom.png);
+        repeat: repeat-x;
+        position: left bottom -1px;
+      }
+      @include textFlex;
+      h2{
+        margin-bottom: 20px;
+        font-size: 50px;
+      }
+      a{
+        transition-duration: $mainDelay;
+        &:hover{
+          color: $greyColor;
+        }
+  
+      }
+    }
+  
   }
 }
 @mixin aboutSection {
@@ -34,6 +67,9 @@
       align-items: center;
       img{
         height: 450px;
+        @include mediaSet("md"){
+          height: auto;
+        }
       }
       .box{
         display: flex;
@@ -56,6 +92,15 @@
           &:hover{
             background-color: rgb($mainColor,0.9);
           }      
+        }
+      }
+      @include mediaSet("lg"){
+        flex-direction: column;
+        img{
+          order: -1;
+        }
+        .box{
+          margin-top: 30px;
         }
       }
     }
@@ -96,6 +141,15 @@
           }
         }
       }
+      @include mediaSet("sm"){
+        grid-template-columns: 1fr;
+        gap: 55px;
+        text-align: center;
+        .box{
+          flex-direction: column;
+        }
+        
+      }
     }
   }
 }
@@ -133,6 +187,17 @@
             top: 0px;
             z-index: 5;
           }
+        }
+        @include mediaSet("sm"){
+          flex-direction: column;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+      }
+      @include mediaSet("md"){
+        flex-direction: column;
+        .part{
+          margin-top: 50px;
         }
       }
     }
@@ -196,8 +261,10 @@
             padding: 10px;
             background-color: #fff1;
             font-size: 20px;
+            transition-duration: $mainDelay;
+            border-bottom: solid 2px transparent; 
             &:focus{
-              border-bottom: solid 2px $greyColor; 
+              border-bottom-color: $greyColor; 
               background-color: #fff3;
             }
           }
@@ -205,10 +272,111 @@
             text-align: center;
           }
         }
+        @include mediaSet("md"){
+          flex-direction: column;
+          text-align: center;
+          >*{
+            width: 100%;
+          }
+        }
       }
     }
   }
 }
 @mixin testimonialSection{
-  
+  #testimonial {
+    .owl-carousel{
+      div{
+        display: flex;
+        gap: 15px;
+      }
+      .item{
+        flex-direction: column;
+        img{
+          height: 100px;
+          width: auto;
+        }
+        .client{
+          align-items: center;
+          .textBox{
+            flex-direction: column;
+            p{
+              margin-top: -10px;
+              color: #888;
+            }
+          }
+        }
+      }
+      .owl-nav{
+        display: none;
+      }
+      .owl-dots{
+        margin: 20px 0;
+        justify-content: center;
+        button {
+          span{
+            display: none;
+          }
+          height: 18px;
+          width: 18px;
+          border-radius: 9px;
+          background-color: $greyColor;
+          transition-duration: $mainDelay;
+          &.active{
+              width: 35px;
+              background-color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin contactSection{
+  #contact{
+    .media{
+      margin: 50px 0 90px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      gap: 25px;
+      i{
+        font-size: 50px;
+        color: $greyColor;
+      }
+      h3{
+        margin: 10px 0;
+      }
+    }
+    .lower{
+      display: flex;
+      gap: 30px;
+      >*{
+        width: 50%;
+        height: 100%;
+      }
+      .map{
+        background-color: #888;
+        min-height: 300px;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        [type="submit"]{
+          align-self: start;
+        }
+        >*:not([type="submit"]){
+          padding: 10px 15px;
+          border: solid 1px #888;
+          background-color: transparent;
+          font-size: 20px;
+        }
+        textarea{
+          resize: vertical;
+          min-height: 100px
+        }
+      }
+    }
+  }
 }

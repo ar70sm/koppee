@@ -5,21 +5,17 @@ doctype html
 html(lang="en")
   head
     include ../components/head
-    link(rel="stylesheet", href="css/owl.carousel.min.css")
-    link(rel="stylesheet", href="css/owl.theme.default.css")
   body 
     include ../components/nav
     section#wrapper
-      ul
+      .owl-carousel.owl-theme
         -for(var i=1; i<=2;i++)
-          li(class=`${(i==1)?"active":""}`)
+          .item
             img(src=`img/carousel-${i}.jpg`)
             .textBox
               p.upperP We have been servicing
               h2 Coffee 
               p since 1950
-      i.fa-solid.fa-angles-left
-      i.fa-solid.fa-angles-right
     a.goUp(href="#wrapper"): i.fa-solid.fa-angles-up
     +aboutSection
     +serviceSection
@@ -34,6 +30,7 @@ html(lang="en")
     +menuSection
     +reservationSection
     +testimonialSection
+    include ../components/footer
     script(src='js/jquery.min.js')
-    script(src='js/owlcarousel/owl.carousel.min.js')
+    script(src='js/owl.carousel.min.js')
     script(src="js/script.js") 

@@ -1,5 +1,10 @@
 include ../mixin/general-mixin.pug
 nav
   a(href="home.html"): h1 KOPPEE
+  i.fa-solid.fa-bars.list
   -var navLinks = ["Home","About","Service","Menu",{title:"Pages",ele:["Reservation","Testimonial"]},"Contact"]
   +ulArr(navLinks)
+
+
+
+

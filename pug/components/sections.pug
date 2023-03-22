@@ -96,7 +96,17 @@ mixin reservationSection
             option person 2
           input(type="submit", value="Book Naw")
 mixin testimonialSection
-  h2 Testimonial
-  p Our Clients Say
-  .container 
-    
+  section#testimonial
+    .container 
+      h2.title Testimonial
+      p Our Clients Say
+      .owl-carousel.owl-theme
+        -for(var i=1;i<=4;i++)
+          .item
+            .client
+              img(src=`img/testimonial-${i}.jpg`)
+              .textBox 
+                h3 Client Name
+                p Profession
+            p.lorem Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita
+

@@ -5,19 +5,10 @@
 #wrapper{
   color: white;
   position: relative;
-  ul{
-    position: relative;
-    display: flex;
-    z-index: -1;
-    li{
-      margin-right: -100%;
+  .owl-carousel{
+    .item{
       width: 100%;
-      transition-duration: 1s;
-      transform: translateX(-100%);
-      &.active{
-        animation: carousel 1s;
-        transform: translateX(0);
-      }
+      position: relative;
       img{
         width: 100%;
       }
@@ -28,7 +19,9 @@
         height: 100%;
         top: 0;
         left: 0;
+        text-align: center;
         @include textFlex;
+        padding: 100px 35px 20px;
         .upperP{
           color: $greyColor;
           font-size: 40px;
@@ -42,34 +35,64 @@
             content: " * ";
           }
         }
+        @include mediaSet("sm"){
+          .upperP{
+            font-size: 20px;
+          }
+          h2{
+            font-size: 25px;
+          }
+          p:last-of-type{
+            font-size: 15px;
+          }
+          
+        }
       }
     }
+
   }
-  background: url(../img/overlay-bottom.png);
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    width: 100%;
   background: {
+    image:url(../img/overlay-bottom.png);
     repeat:repeat-x;
     position:left bottom -1px;
   }
-  >i{
+  z-index: 1;
+  }
+  .owl-nav button{
     position: absolute;
     z-index: 5;
     top: 50%;
     transform: translateY(-50%);
-    padding: 20px;
+    padding: 20px 10px !important;
+    margin: 0;
+    &:hover{
+      background-color: transparent;
+    }
+    & span {
+      display: none;
+    }
     cursor: pointer;
+    &::before{
+      font-family: fontawesome;
+    }
     &:first-of-type{
-      left: 50px;
+      left: 0;
+      &::before{
+        content: "\f100";
+      }
     }
     &:last-of-type{
-      right: 50px;
-    }
-  }
-  @keyframes carousel{
-    0%{
-      transform: translateX(100%);
-    }
-    100%{
-      transform: translateX(0);
+      right: 0;
+      &::before{
+        content: "\f101";
+      }
     }
   }
 }
@@ -79,6 +102,7 @@
 
 #offer{
   @extend %paperSection;
+  text-align: center;
   >div{
     @include textFlex;
     gap: 15px;
@@ -101,6 +125,17 @@
         max-width: 100%;
       }
     }  
+    @include mediaSet("sm"){
+      p:nth-child(1){
+        font-size: 40px;
+      }
+      p:nth-child(2){
+        font-size: 25px;
+      }
+      p:nth-child(3){
+        font-size: 18px;
+      }
+    }
   }
 }
 

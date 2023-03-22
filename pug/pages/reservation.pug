@@ -1,0 +1,21 @@
+-var CurrentPage ="Reservation"
+-var currentPage =CurrentPage.toLowerCase()
+include ../components/sections
+doctype html
+html(lang="en")
+  head
+    include ../components/head
+  body 
+    include ../components/nav
+    section#wrapper
+        div 
+          h2 Reservation
+          p 
+            a(href="home.html") Home 
+            | / #{CurrentPage}
+    a.goUp(href="#wrapper"): i.fa-solid.fa-angles-up
+    +#{currentPage+"Section"}
+    include ../components/footer
+    script(src='js/jquery.min.js')
+    script(src='js/owl.carousel.min.js')
+    script(src="js/script.js") 

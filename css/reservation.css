@@ -1,0 +1,177 @@
+#reservation .container > div .textBox li:before {
+  content: "\f00c";
+  font-family: fontawesome;
+  margin-right: 10px;
+  color: #da9f5b;
+}
+
+#reservation .container {
+  color: white;
+  position: relative;
+  z-index: 1;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+#reservation .container:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(51, 33, 29, 0.6);
+}
+#reservation .container > div {
+  padding: 70px 0;
+  background-image: url(../img/overlay-bottom.png), url(../img/overlay-top.png);
+  background-repeat: repeat-x;
+  background-position: left bottom -1px, left top -1px;
+}
+
+#wrapper {
+  color: white;
+  position: relative;
+  z-index: 1;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+#wrapper:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(51, 33, 29, 0.85);
+}
+#wrapper > div {
+  padding: 150px 0;
+  background-image: url(../img/overlay-bottom.png);
+  background-repeat: repeat-x;
+  background-position: left bottom -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#wrapper > div h2 {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+#wrapper > div a {
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+}
+#wrapper > div a:hover {
+  color: #da9f5b;
+}
+
+#reservation .container {
+  padding: 0;
+}
+#reservation .container > div {
+  padding-right: 20px;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+#reservation .container > div > * {
+  width: 50%;
+}
+#reservation .container > div .textBox p {
+  margin-bottom: 10px;
+}
+#reservation .container > div .textBox p:nth-child(1) {
+  color: #da9f5b;
+  font-size: 70px;
+  font-weight: 700;
+}
+#reservation .container > div .textBox p:nth-child(2) {
+  font-size: 50px;
+}
+#reservation .container > div .textBox p:nth-child(3) {
+  color: white;
+  font-size: 20px;
+}
+#reservation .container > div .textBox li {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+#reservation .container > div form {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 10px;
+  gap: 10px;
+}
+#reservation .container > div form:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(51, 33, 29, 0.7);
+}
+#reservation .container > div form p {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+#reservation .container > div form input:not([type=submit]),
+#reservation .container > div form select {
+  border: none;
+  border-bottom: solid 0px #da9f5b;
+  color: #aaa;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.0666666667);
+  font-size: 20px;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+  border-bottom: solid 2px transparent;
+}
+#reservation .container > div form input:not([type=submit]):focus,
+#reservation .container > div form select:focus {
+  border-bottom-color: #da9f5b;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#reservation .container > div form [type=submit] {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  #reservation .container > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  #reservation .container > div > * {
+    width: 100%;
+  }
+}

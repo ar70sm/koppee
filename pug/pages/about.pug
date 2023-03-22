@@ -1,0 +1,21 @@
+-var CurrentPage ="About"
+-var currentPage =CurrentPage.toLowerCase()
+include ../components/sections
+doctype html
+html(lang="en")
+  head
+    include ../components/head
+  body 
+    include ../components/nav
+    section#wrapper
+        div 
+          h2 About Us
+          p 
+            a(href="home.html") Home 
+            | / About Us
+    a.goUp(href="#wrapper"): i.fa-solid.fa-angles-up
+    +aboutSection
+    include ../components/footer
+    script(src='js/jquery.min.js')
+    script(src='js/owl.carousel.min.js')
+    script(src="js/script.js") 

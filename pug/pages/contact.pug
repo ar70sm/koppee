@@ -1,0 +1,48 @@
+-var CurrentPage ="Contact"
+-var currentPage =CurrentPage.toLowerCase()
+include ../components/sections
+doctype html
+html(lang="en")
+  head
+    include ../components/head
+  body 
+    include ../components/nav
+    section#wrapper
+        div 
+          h2 MENU
+          p 
+            a(href="home.html") Home 
+            | / #{CurrentPage}
+    a.goUp(href="#wrapper"): i.fa-solid.fa-angles-up
+    section#contact 
+      .wide-container 
+        h2.title Contact Us
+        p Feel Free To Contact
+        .media 
+          .box  
+            i.fa-solid.fa-location-dot
+            h3 Address
+            p.lorem 123 Street, New York, USA
+          .box  
+            i.fa-solid.fa-phone
+            h3 Phone
+            p.lorem +012 345 67890
+          .box  
+            i.fa-regular.fa-envelope
+            h3 Email
+            p.lorem info@example.com
+        .lower 
+          .map 
+          form
+            input(type="text", placeholder="Your Name", name="name")
+            input(type="email", placeholder="Email", name="email")
+            input(type="text", placeholder="Subject", name="sub")
+            textarea(placeholder="Message", name="message")
+            input(type="submit", value="Send Message")
+
+
+
+    include ../components/footer
+    script(src='js/jquery.min.js')
+    script(src='js/owl.carousel.min.js')
+    script(src="js/script.js") 
